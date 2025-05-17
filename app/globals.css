@@ -1,7 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* Properly support dark mode with system detection */
+@custom-variant dark (&:is(.dark *), .dark &, &.dark);
 
 @theme inline {
   --color-background: var(--background);
